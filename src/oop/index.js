@@ -142,32 +142,61 @@
 // );
 
 //! ABSTRACT CLASSES
-var Person = {
-    name: 'None',
-    email: 'None',
-    sendEmail: function () {
-        console.log('Mail sent to : ' + this.name + '/' + this.email);
-    },
-};
+// var Person = {
+//     name: 'None',
+//     email: 'None',
+//     sendEmail: function () {
+//         console.log('Mail sent to : ' + this.name + '/' + this.email);
+//     },
+// };
 
-console.log(Person);
+// console.log(Person);
 
-function Customer(name, email) {
+// function Customer(name, email) {
+//     this.name = name;
+//     this.email = email;
+//     // other staff
+// }
+
+// function Employee(name, email) {
+//     this.name = name;
+//     this.email = email;
+//     // other staff
+// }
+
+// Customer.prototype = Person;
+// var someCustomer = new Customer('ken', 'kenden@gmail.com');
+// someCustomer.sendEmail();
+
+// Employee.prototype = Person;
+// var someEmployee = new Employee('kerem', 'kerem@gmail.com');
+// someEmployee.sendEmail();
+
+//! INTERFACES
+
+function sendEmail(personInterface) {
+    var to = personInterface.eMail;
+    var name = personInterface.name;
+
+    var send = function () {
+        console.log('Mail sent to : ' + name + '/' + to);
+    };
+    send();
+}
+
+function Customer(name, eMail) {
     this.name = name;
-    this.email = email;
+    this.eMail = eMail;
     // other staff
 }
 
-function Employee(name, email) {
+function Employee(name, eMail) {
     this.name = name;
-    this.email = email;
+    this.eMail = eMail;
     // other staff
 }
 
-Customer.prototype = Person;
 var someCustomer = new Customer('ken', 'kenden@gmail.com');
-someCustomer.sendEmail();
-
-Employee.prototype = Person;
-var someEmployee = new Employee('kerem', 'kerem@gmail.com');
-someEmployee.sendEmail();
+var someEmployee = new Employee('den', 'den@gmail.com');
+sendEmail(someCustomer);
+sendEmail(someEmployee);
