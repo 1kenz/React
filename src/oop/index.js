@@ -123,20 +123,51 @@
 // console.log(ken);
 
 //! INHERTANCE
-function Person(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    // add function
+// function Person(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     // add function
+// }
+
+// function Student(favoriteCourse) {
+//     this.favoriteCourse = favoriteCourse;
+// }
+
+// Student.prototype = new Person('ken', 'den'); // inheritance
+
+// var ken = new Student('Programming');
+
+// console.log(
+//     ken.firstName + ' ' + ken.lastName + ' loves ' + ken.favoriteCourse
+// );
+
+//! ABSTRACT CLASSES
+var Person = {
+    name: 'None',
+    email: 'None',
+    sendEmail: function () {
+        console.log('Mail sent to : ' + this.name + '/' + this.email);
+    },
+};
+
+console.log(Person);
+
+function Customer(name, email) {
+    this.name = name;
+    this.email = email;
+    // other staff
 }
 
-function Student(favoriteCourse) {
-    this.favoriteCourse = favoriteCourse;
+function Employee(name, email) {
+    this.name = name;
+    this.email = email;
+    // other staff
 }
 
-Student.prototype = new Person('ken', 'den'); // inheritance
+Customer.prototype = Person;
+var someCustomer = new Customer('ken', 'kenden@gmail.com');
+someCustomer.sendEmail();
 
-var ken = new Student('Programming');
-
-console.log(
-    ken.firstName + ' ' + ken.lastName + ' loves ' + ken.favoriteCourse
-);
+Employee.prototype = Person;
+var someEmployee = new Employee('kerem', 'kerem@gmail.com');
+someEmployee.sendEmail();
