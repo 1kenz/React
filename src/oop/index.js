@@ -72,5 +72,71 @@
 // console.log(someCustomer.eMail);
 // console.log(someCustomer.fullName());
 
+//! CLOSURES
 
-// 
+// var counter = 0;
+
+// function add() {
+//     counter += 1;
+//     return console.log(counter);
+// }
+// add();
+// add();
+// add();
+// add();
+
+// function someOtherFunction() {
+//     counter += 10;
+// }
+
+// someOtherFunction();
+// someOtherFunction();
+
+//! closures
+// var add = (function () {
+//     var counter = 0;
+//     return function () {
+//         return console.log((counter += 1));
+//     };
+// })();
+
+//! CLASSES
+// constructor
+// fields (public or private)
+// functions
+// static members
+
+// function Customer(firstName, lastName) {
+//     // constructor
+//     this.firstName = firstName; // public
+//     this.lastName = lastName;
+
+//     var someField = 'some value'; // private
+
+//     this.sendProduct = function () {
+//         // public operation use this
+//         console.log('Product sent!');
+//     };
+// }
+
+// var ken = new Customer('ken', 'den');
+// console.log(ken);
+
+//! INHERTANCE
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    // add function
+}
+
+function Student(favoriteCourse) {
+    this.favoriteCourse = favoriteCourse;
+}
+
+Student.prototype = new Person('ken', 'den'); // inheritance
+
+var ken = new Student('Programming');
+
+console.log(
+    ken.firstName + ' ' + ken.lastName + ' loves ' + ken.favoriteCourse
+);
