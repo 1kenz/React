@@ -6,9 +6,11 @@ export default class ProductList extends Component {
     // }
 
     render() {
+        let title = this.props.title;
+
         return (
             <div>
-                <h2>{this.props.title}</h2>
+                <h2>{title}</h2>
             </div>
         );
     }
