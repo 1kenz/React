@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 export default class ProductList extends Component {
-    constructor(props) {
-        super(props);
-        // var title = this.props.title;
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         return (
