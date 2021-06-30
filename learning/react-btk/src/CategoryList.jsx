@@ -2,7 +2,7 @@ import React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 export default function CategoryList(props) {
-    let title = props.title;
+    let title = props.info.title;
 
     return (
         <div>

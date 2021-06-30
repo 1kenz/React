@@ -6,7 +6,7 @@ export default class ProductList extends Component {
     // }
 
     render() {
-        let title = this.props.title;
+        let title = this.props.info.title;
 
         return (
             <div>

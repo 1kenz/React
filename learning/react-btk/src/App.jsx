@@ -4,8 +4,9 @@ import CategoryList from './CategoryList';
 import { Row, Container, Col } from 'reactstrap';
 
 function App() {
-    let titleCategory = 'Category List';
-    let titleProduct = 'Product List';
+    // encapsulation
+    let categoryInfo = { title: 'Category List' };
+    let productInfo = { title: 'Product List' };
 
     return (
         <div>
@@ -15,10 +16,10 @@ function App() {
                 </Row>
                 <Row>
                     <Col xs="3">
-                        <CategoryList title={titleCategory} />
+                        <CategoryList info={categoryInfo} />
                     </Col>
                     <Col xs="9">
-                        <ProductList title={titleProduct} />
+                        <ProductList info={productInfo} />
                     </Col>
                 </Row>
             </Container>
