@@ -1,7 +1,7 @@
 import Navi from './Navi';
 import ProductList from './ProductList';
 import CategoryList from './CategoryList';
-import { Row, Container } from 'reactstrap';
+import { Row, Container, Col } from 'reactstrap';
 
 function App() {
     return (
@@ -11,11 +11,14 @@ function App() {
                     <Navi />
                 </Row>
                 <Row>
-                    <CategoryList />
-                    <ProductList />
+                    <Col xs="3">
+                        <CategoryList title="Category List" />
+                    </Col>
+                    <Col xs="9">
+                        <ProductList title="Product List" />
+                    </Col>
                 </Row>
             </Container>
-            <h2>Hello from React!!!</h2>
         </div>
     );
 }
