@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class ProductList extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+export default function ProductList(props) {
+    let title = props.info.title;
 
-    render() {
-        let title = this.props.info.title;
-
-        return (
-            <div>
-                <h2>{title}</h2>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <h2>{title}</h2>
+        </div>
+    );
 }
