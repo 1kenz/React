@@ -2,6 +2,7 @@ import Navi from './Navi';
 import ProductList from './ProductList';
 import CategoryList from './CategoryList';
 import { Row, Container, Col } from 'reactstrap';
+import alertify from 'alertifyjs';
 
 import React, { Component } from 'react';
 
@@ -39,6 +40,7 @@ export default class App extends Component {
             newCart.push({ product: product, quantity: 1 });
         }
         this.setState({ cart: newCart });
+        alertify.success(product.productName + ' added to cart!', 2);
     };
 
     removeFromCart = (product) => {
