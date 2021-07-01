@@ -30,7 +30,6 @@ const Navi = (props) => {
                         </NavItem>
                         <CartSummary cart={props.cart} />
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                 </Collapse>
             </Navbar>
         </div>
