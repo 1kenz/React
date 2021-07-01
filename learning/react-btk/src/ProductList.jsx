@@ -1,10 +1,11 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 
 export default function ProductList(props) {
     let title = props.info.title;
     let currentCategory = props.currentCategory;
     let products = props.products;
+    let addToCart = props.addToCart;
 
     return (
         <div>
@@ -19,6 +20,7 @@ export default function ProductList(props) {
                         <th>Unit Price</th>
                         <th>Quantity Per Unit</th>
                         <th>Units In Stock</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +31,15 @@ export default function ProductList(props) {
                             <td>{product.unitPrice}</td>
                             <td>{product.quantityPerUnit}</td>
                             <td>{product.unitsInStock}</td>
+                            <td>
+                                <Button
+                                    onClick={() => addToCart(product)}
+                                    outline
+                                    color="danger"
+                                >
+                                    buy
+                                </Button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
