@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 
 export default class CartSummary extends Component {
-    render(props) {
+    render() {
         // let cartItems = this.props.cart;
 
         return (
@@ -17,8 +17,11 @@ export default class CartSummary extends Component {
                         Cart-{this.props.cart.length}
                     </DropdownToggle>
                     <DropdownMenu right>
-                        <DropdownItem>Option 1</DropdownItem>
-                        <DropdownItem>Option 2</DropdownItem>
+                        {this.props.cart.map((cartItem) => (
+                            <DropdownItem key={cartItem.product.id}>
+                                {cartItem.product.productName}
+                            </DropdownItem>
+                        ))}
                         <DropdownItem divider />
                         <DropdownItem>Reset</DropdownItem>
                     </DropdownMenu>
