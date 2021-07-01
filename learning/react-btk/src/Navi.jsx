@@ -28,7 +28,7 @@ const Navi = (props) => {
                                 GitHub
                             </NavLink>
                         </NavItem>
-                        <CartSummary props={this.props.cart} />
+                        <CartSummary cart={props.cart} />
                     </Nav>
                     <NavbarText>Simple Text</NavbarText>
                 </Collapse>

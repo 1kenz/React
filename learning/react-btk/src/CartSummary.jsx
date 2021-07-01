@@ -7,14 +7,14 @@ import {
 } from 'reactstrap';
 
 export default class CartSummary extends Component {
-    render({ cart }) {
+    render(props) {
         // let cartItems = this.props.cart;
 
         return (
             <div>
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                        Cart-{cart.length}
+                        Cart-{this.props.cart.length}
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>Option 1</DropdownItem>
