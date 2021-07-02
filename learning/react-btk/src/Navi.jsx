@@ -27,7 +27,16 @@ const Navi = (props) => {
                             <NavLink href="https://github.com/xkendx">
                                 GitHub
                             </NavLink>
-                            <Link to="/form1/">Form Demo 1</Link>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink>
+                                <Link to="/form1/">Form Demo 1</Link>
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink>
+                                <Link to="/form2/">Form Demo 2</Link>
+                            </NavLink>
                         </NavItem>
                         <CartSummary
                             removeFromCart={props.removeFromCart}

@@ -9,6 +9,7 @@ import alertify from 'alertifyjs';
 
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import FormDemo2 from './FormDemo2';
 
 export default class App extends Component {
     state = { currentCategory: '', products: [], cart: [] };
@@ -120,6 +121,10 @@ export default class App extends Component {
                                 <Route
                                     path="/form1"
                                     component={FormDemo1}
+                                ></Route>
+                                <Route
+                                    path="/form2"
+                                    component={FormDemo2}
                                 ></Route>
                                 <Route component={NotFound}></Route>
                             </Switch>
