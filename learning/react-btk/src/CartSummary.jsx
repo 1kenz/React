@@ -33,7 +33,6 @@ export default class CartSummary extends Component {
                         </DropdownItem>
                     ))}
                     <DropdownItem divider />
-                    <DropdownItem>Order</DropdownItem>
                     <DropdownItem>
                         <Link to="cart">Go to cart</Link>
                     </DropdownItem>
