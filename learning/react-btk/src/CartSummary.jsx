@@ -32,7 +32,7 @@ export default class CartSummary extends Component {
                         </DropdownItem>
                     ))}
                     <DropdownItem divider />
-                    <DropdownItem>Reset</DropdownItem>
+                    <DropdownItem>Order</DropdownItem>
                 </DropdownMenu>
             </UncontrolledDropdown>
         );
