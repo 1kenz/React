@@ -2,6 +2,7 @@ import Navi from './Navi';
 import ProductList from './ProductList';
 import CategoryList from './CategoryList';
 import CartList from './CartList';
+import FormDemo1 from './FormDemo1';
 import NotFound from './NotFound';
 import { Row, Container, Col } from 'reactstrap';
 import alertify from 'alertifyjs';
@@ -115,6 +116,10 @@ export default class App extends Component {
                                             removeFromCart={this.removeFromCart}
                                         />
                                     )}
+                                ></Route>
+                                <Route
+                                    path="/form1"
+                                    component={FormDemo1}
                                 ></Route>
                                 <Route component={NotFound}></Route>
                             </Switch>
