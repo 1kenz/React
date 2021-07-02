@@ -44,6 +44,8 @@ export default class App extends Component {
         }
         this.setState({ cart: newCart });
         alertify.success(product.productName + ' added to cart!', 2);
+        // console.log(product);
+        console.log(this.state.cart);
     };
 
     removeFromCart = (product) => {
@@ -106,7 +108,13 @@ export default class App extends Component {
                                 <Route
                                     exact
                                     path="/cart"
-                                    component={CartList}
+                                    render={(props) => (
+                                        <CartList
+                                            {...props}
+                                            cart={this.state.cart}
+                                            removeFromCart={this.removeFromCart}
+                                        />
+                                    )}
                                 ></Route>
                                 <Route component={NotFound}></Route>
                             </Switch>
