@@ -1,13 +1,13 @@
 import Navi from './Navi';
 import ProductList from './ProductList';
 import CategoryList from './CategoryList';
+import CartList from './CartList';
 import NotFound from './NotFound';
 import { Row, Container, Col } from 'reactstrap';
 import alertify from 'alertifyjs';
 
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import CartList from './CartList';
 
 export default class App extends Component {
     state = { currentCategory: '', products: [], cart: [] };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CartSummary from './CartSummary';
 import {
     Collapse,
     Navbar,
@@ -8,7 +9,6 @@ import {
     NavItem,
     NavLink,
 } from 'reactstrap';
-import CartSummary from './CartSummary';
 
 const Navi = (props) => {
     const [isOpen, setIsOpen] = useState(false);
