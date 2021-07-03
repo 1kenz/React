@@ -7,12 +7,9 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
     NavbarText,
 } from 'reactstrap';
+import CartSummary from '../cart/CartSummary';
 
 const Navi = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +19,7 @@ const Navi = (props) => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <NavbarBrand href="/">DNZ Security & Software</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
@@ -30,23 +27,12 @@ const Navi = (props) => {
                             <NavLink href="/components/">Components</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
+                            <NavLink href="https://github.com/xkendx">
                                 GitHub
                             </NavLink>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>Option 1</DropdownItem>
-                                <DropdownItem>Option 2</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>Reset</DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+                        <CartSummary />
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                 </Collapse>
             </Navbar>
         </div>
