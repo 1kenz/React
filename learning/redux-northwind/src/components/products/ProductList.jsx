@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as productActions from '../../redux/actions/productActions';
 import * as cartActions from '../../redux/actions/cartActions';
-import { Table, Button } from 'reactstrap';
+import { Table, Button, Badge } from 'reactstrap';
 import alertify from 'alertifyjs';
 
 class ProductList extends Component {
@@ -21,7 +21,9 @@ class ProductList extends Component {
             <div>
                 <h2>
                     Products-
-                    <span>{this.props.currentCategory.categoryName}</span>
+                    <Badge variant="success">
+                        {this.props.currentCategory.categoryName}
+                    </Badge>
                 </h2>
                 <Table striped>
                     <thead>
