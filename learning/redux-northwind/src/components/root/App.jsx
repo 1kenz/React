@@ -3,6 +3,7 @@ import Dashboard from './Dashboard';
 import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
 import cartDetail from '../cart/cartDetail';
+import Error from '../common/Error';
 
 function App(props) {
     return (

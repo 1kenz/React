@@ -11,8 +11,15 @@ import {
 } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import * as cartActions from '../../redux/actions/cartActions';
+import { Link } from 'react-router-dom';
+import alertify from 'alertifyjs';
 
 export class CartSummary extends Component {
+    removeFromCart(product) {
+        this.props.actions.removeFromCart(product);
+        alertify.error(product.productName + ' deleted.');
+    }
+
     renderEmpty() {
         return (
             <NavItem>
@@ -33,9 +40,7 @@ export class CartSummary extends Component {
                             <Badge
                                 color="danger"
                                 onClick={() =>
-                                    this.props.actions.removeFromCart(
-                                        cartItem.product
-                                    )
+                                    this.removeFromCart(cartItem.product)
                                 }
                             >
                                 X
@@ -45,7 +50,9 @@ export class CartSummary extends Component {
                         </DropdownItem>
                     ))}
                     <DropdownItem divider />
-                    <DropdownItem>Cart Details</DropdownItem>
+                    <DropdownItem>
+                        <Link to={'/cart'}>Cart Details</Link>
+                    </DropdownItem>
                 </DropdownMenu>
             </UncontrolledDropdown>
         );
