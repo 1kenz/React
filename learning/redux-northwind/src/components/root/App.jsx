@@ -16,10 +16,9 @@ function App(props) {
                     <Route path="/product" exact component={Dashboard} />
                     <Route path="/cart" exact component={cartDetail} />
                     <Route
-                        path="/saveproduct/id:productId"
+                        path="/saveproduct/:productId"
                         component={AddOrUpdateProduct}
                     />
-                    <Route component={NotFound} />
                 </Switch>
             </Container>
         </div>

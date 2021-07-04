@@ -4,7 +4,7 @@ import { getCategories } from '../../redux/actions/categoryActions';
 import { saveProduct } from '../../redux/actions/productActions';
 import ProductDetail from './ProductDetail';
 
-export const AddOrUpdateProduct = ({
+function AddOrUpdateProduct({
     products,
     categories,
     getProducts,
@@ -12,8 +12,8 @@ export const AddOrUpdateProduct = ({
     saveProduct,
     history,
     ...props
-}) => {
-    const [product, setProduct] = useState(...props.product);
+}) {
+    const [product, setProduct] = useState({ ...props.product });
 
     useEffect(() => {
         if (categories.length === 0) {
@@ -45,14 +45,14 @@ export const AddOrUpdateProduct = ({
             onSave={handleSave}
         />
     );
-};
+}
 
 export function getProductById(products, productId) {
     let product = products.find((product) => product.id === productId) || null;
     return product;
 }
 
-function mapStateToProps(state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
     const productId = ownProps.match.params.productId;
     const product =
         productId && state.productListReducer.length > 0
@@ -63,7 +63,7 @@ function mapStateToProps(state, ownProps) {
         products: state.productListReducer,
         categories: state.categoryListReducer,
     };
-}
+};
 
 const mapDispatchToProps = {
     getCategories,

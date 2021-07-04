@@ -22,7 +22,7 @@ class ProductList extends Component {
             <div>
                 <h2>
                     Products-
-                    <Badge variant="success">
+                    <Badge color="success">
                         {this.props.currentCategory.categoryName}
                     </Badge>
                 </h2>
@@ -40,7 +40,7 @@ class ProductList extends Component {
                     <tbody>
                         {this.props.products.map((product) => (
                             <tr key={product.id}>
-                                <td>{product.id}</td>
+                                <th scope="row">{product.id}</th>
                                 <td>
                                     <Link to={'/saveproduct/' + product.id}>
                                         {product.productName}
