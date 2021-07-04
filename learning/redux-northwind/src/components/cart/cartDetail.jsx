@@ -5,7 +5,7 @@ import * as cartActions from '../../redux/actions/cartActions';
 import { Table, Button } from 'reactstrap';
 import alertify from 'alertifyjs';
 
-export class cartDetail extends Component {
+export class CartDetail extends Component {
     removeFromCart(product) {
         this.props.actions.removeFromCart(product);
         alertify.error(product.productName + ' deleted.');
@@ -66,4 +66,4 @@ const mapDispatchToProps = (dispatch) => ({
     },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(cartDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(CartDetail);
