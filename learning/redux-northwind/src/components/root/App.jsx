@@ -19,6 +19,8 @@ function App(props) {
                         path="/saveproduct/:productId"
                         component={AddOrUpdateProduct}
                     />
+                    <Route path="/saveproduct" component={AddOrUpdateProduct} />
+                    <Route component={NotFound} />
                 </Switch>
             </Container>
         </div>

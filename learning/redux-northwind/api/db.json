@@ -619,6 +619,14 @@
     {
       "categoryId": 1,
       "id": 79
+    },
+    {
+      "productName": "Fish",
+      "categoryId": 8,
+      "unitPrice": "11",
+      "quantityPerUnit": "1",
+      "unitsInStock": "122",
+      "id": 80
     }
   ],
   "categories": [
