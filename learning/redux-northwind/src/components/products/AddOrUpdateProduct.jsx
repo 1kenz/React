@@ -14,6 +14,7 @@ function AddOrUpdateProduct({
     ...props
 }) {
     const [product, setProduct] = useState({ ...props.product });
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {
         if (categories.length === 0) {
@@ -28,6 +29,28 @@ function AddOrUpdateProduct({
             ...previousProduct,
             [name]: name === 'categoryId' ? parseInt(value, 10) : value,
         }));
+
+        validate(name, value);
+    }
+
+    function validate(name, value) {
+        if (value === '') {
+            setErrors((previousErrors) => ({
+                ...previousErrors,
+                productName: 'Product Name is required!',
+                unitPrice: 'Unit Price is required!',
+                quantityPerUnit: 'Quantity Per Unit is required!',
+                unitsInStock: 'Units in Stock is required!',
+            }));
+        } else {
+            setErrors((previousErrors) => ({
+                ...previousErrors,
+                productName: '',
+                unitPrice: '',
+                quantityPerUnit: '',
+                unitsInStock: '',
+            }));
+        }
     }
 
     function handleSave(event) {
@@ -43,6 +66,7 @@ function AddOrUpdateProduct({
             categories={categories}
             onChange={handleChange}
             onSave={handleSave}
+            errors={errors}
         />
     );
 }
